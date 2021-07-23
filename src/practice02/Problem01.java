@@ -1,4 +1,4 @@
-package Practice02;
+package practice02;
 
 public class Problem01 {
 

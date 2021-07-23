@@ -1,4 +1,4 @@
-package Practicejiwon;
+package practicejiwon;
 
 import java.util.Scanner;
 

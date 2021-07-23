@@ -1,4 +1,4 @@
-package Practicejiwon;
+package practicejiwon;
 
 public class java127p {
 
