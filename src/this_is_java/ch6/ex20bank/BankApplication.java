@@ -1,4 +1,4 @@
-package this_is_java.ch6.ex20bank;
+		package this_is_java.ch6.ex20bank;
 
 import java.util.*;
 
@@ -34,78 +34,120 @@ public class BankApplication {
 		}
 		System.out.println("프로그램 종료");
 	}
+	
 		
 		// 계좌생성하기
 		private static void createAccount() {
 			
-			//TODO: 풀어보기 꼭!! 20번 문제 챕터6
-//			Account account = new Account(null, null, 0);
-//			int i = 0;
-//				
-//			System.out.println("-------------");
-//			System.out.println("계좌생성");	
-//			System.out.println("--------------");
-//		
-//		
-//			System.out.print("계좌번호: ");
-//			accountArray[i].setAno(scanner.next());
-//			
-//			System.out.print("계좌주: ");
-//			accountArray[i].setOwner(scanner.next());
-//			
-//			System.out.print("초기입금액: ");
-//			accountArray[i].setBalance(scanner.nextInt());
-//			
-//			accountArray[i] = new Account(
-//					accountArray[i].getAno(), accountArray[i].getOwner(), accountArray[i].getBalance());
-//			
-//			System.out.println(accountArray[i]);
-//			System.out.println("결과: 계좌가 생성되었습니다.");
-//			
-//			i++;
 			
+			
+			System.out.println("-------------");
+			System.out.println("계좌생성");	
+			System.out.println("-------------");
+		
+		
+			System.out.print("계좌번호: ");
+			String ano = scanner.next();
+			
+			System.out.print("계좌주: ");
+			String owner = scanner.next();
+			
+			System.out.print("초기입금액: ");
+			int balance = scanner.nextInt();
+			
+			Account newAccount =  new Account(ano, owner, balance);
+			
+			for (int i = 0; i < accountArray.length; i++) {
+				if (accountArray[i] == null) {
+					accountArray[i] = newAccount;
+					System.out.println("결과 : 계좌가 생성되었습니다");
+					break;
+				}
+			
+			}
 		}
-	
 			
 		
 		
 		// 계좌목록보기
 		private static void accountList() {
+			
 			System.out.println("-------------");
-			System.out.println("계좌목록");	
-			System.out.println("--------------");
+			System.out.println("계좌목록");
+			System.out.println("-------------");
 			
 			for (int i = 0; i < accountArray.length; i++) {
 				
-			System.out.println(accountArray[i]);
+				Account account = accountArray[i];
+				if(accountArray[i] != null) {
+					System.out.print(account.getAno());
+					System.out.printf("\t\t");
+					System.out.print(account.getOwner());
+					System.out.printf("\t\t");
+					System.out.print(account.getBalance());
+					System.out.println();
+
+				}
 			}
-			
-			
-		
-			
 		}
 		
 		// 예금하기
 		private static void deposit() {
 			
+			System.out.println("-------------");
+			System.out.println("예금");	
+			System.out.println("-------------");
+			System.out.print("계좌번호: ");
+			String inputAno = scanner.next();
+			System.out.print("예금액: ");
+			int money = scanner.nextInt();
+			
+			for (int i = 0; i < accountArray.length; i++) {
+				Account accountFind = accountArray[i];
+				String ano = accountFind.getAno();
+				if (inputAno.equals(ano)) {
+					int balance = accountFind.getBalance();
+					balance += money;
+					accountFind.setBalance(balance);
+					System.out.println("예금이 성공되었습니다.");
+//					System.out.println(balance); // 테스트
+					break;
+				}
+			}
 		}
 		
 		// 출금하기
 		private static void withdraw() {
 			
+			System.out.println("-------------");
+			System.out.println("출금");	
+			System.out.println("-------------");
+			System.out.print("계좌번호: ");
+			String inputAno = scanner.next();
+			System.out.print("출금액: ");
+			int money = scanner.nextInt();
+			
+			for (int i = 0; i < accountArray.length; i++) {
+				Account accountFind = accountArray[i];
+				String ano = accountFind.getAno();
+				if (inputAno.equals(ano)) {
+					int balance = accountFind.getBalance();
+					balance -= money;
+					accountFind.setBalance(balance);
+					System.out.println("출금이 성공되었습니다.");
+					System.out.println(balance); // 테스트
+					break;
+				}
+			}
+			
 		}
 		
 		// Account 배열에서 ano와 동일한 Account 객체 찾기
 		private static Account findAccount(String ano) {
+			//TODO: 풀어보기 꼭!! 20번 문제 챕터6
+		
 			
 		}
-		
-		
-		
-		
-		
-		
-		
 		
 		
 		
