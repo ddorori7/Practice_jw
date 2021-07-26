@@ -98,7 +98,8 @@ public class BankApplication {
 			System.out.println("예금");	
 			System.out.println("-------------");
 			System.out.print("계좌번호: ");
-			String inputAno = scanner.next();
+//			String inputAno = scanner.next();
+			findAccount(scanner.next()); 
 			System.out.print("예금액: ");
 			int money = scanner.nextInt();
 			
@@ -123,29 +124,42 @@ public class BankApplication {
 			System.out.println("출금");	
 			System.out.println("-------------");
 			System.out.print("계좌번호: ");
-			String inputAno = scanner.next();
+			findAccount(scanner.next()); // 변경점1
 			System.out.print("출금액: ");
 			int money = scanner.nextInt();
 			
-			for (int i = 0; i < accountArray.length; i++) {
-				Account accountFind = accountArray[i];
-				String ano = accountFind.getAno();
-				if (inputAno.equals(ano)) {
-					int balance = accountFind.getBalance();
+//			for (int i = 0; i < accountArray.length; i++) {
+//				Account accountFind = accountArray[i];
+//				String ano = accountFind.getAno();
+//				if (inputAno.equals(ano)) {
+//					int balance = accountFind.getBalance();
 					balance -= money;
 					accountFind.setBalance(balance);
 					System.out.println("출금이 성공되었습니다.");
-					System.out.println(balance); // 테스트
+//					System.out.println(balance); // 테스트
+//					break;
+//				}
+//			}
+			
+		}
+		
+		//TODO: 객체찾기 만들기
+		// Account 배열에서 ano와 동일한 Account 객체 찾기
+		private static Account findAccount(String ano) {
+			
+			
+			for (int i = 0; i < accountArray.length; i++) {
+				
+				Account find = accountArray[i];
+				ano = scanner.next();
+				String findAno = find.getAno();
+				if (findAno == ano) {
+					int balance = find.getBalance();
 					break;
 				}
 			}
 			
-		}
-		
-		// Account 배열에서 ano와 동일한 Account 객체 찾기
-		private static Account findAccount(String ano) {
-			//TODO: 풀어보기 꼭!! 20번 문제 챕터6
-		
+			
 			
 		}
 		
