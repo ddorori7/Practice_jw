@@ -15,9 +15,9 @@ public class Song1 {
 	
 
 	public Song1(String title, String artist) { // 생성자 오버로딩
-		this(title, artist, null, 0, "3번 track", "이민수 작곡"); // 다른 생성자 호출
-//		this.title = "아이유";
-//		this.artist = "좋은날";
+//		this(title, artist, null, 0, "3번 track", "이민수 작곡"); // 다른 생성자 호출
+		this.title = "아이유";
+		this.artist = "좋은날";
 	}
 	
 //	public Song1(String title, String artist) { // 생성자 오버로딩 똑같이 하면 에러생김
@@ -27,8 +27,7 @@ public class Song1 {
 	
 	public Song1(String title, String artist,
 			String album, int year, String composer, String track) {
-		this.title = title;
-		this.artist = artist;
+		this(title, artist);
 		this.album = album;
 		this.composer = composer;
 		this.year = year;
