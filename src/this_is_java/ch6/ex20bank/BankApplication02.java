@@ -2,7 +2,7 @@
 
 import java.util.*;
 
-public class BankApplication {
+public class BankApplication02 {
 	
 	private static Account[] accountArray = new Account[100]; // 배열 참조 변수 객체 생성..?
 	private static Scanner scanner = new Scanner(System.in);
@@ -144,25 +144,25 @@ public class BankApplication {
 			
 		}
 		
-		// 쌩으로 만든 버전
+		// TODO: 객체찾기 메서드 만들기!!!
 		// Account 배열에서 ano와 동일한 Account 객체 찾기
-//		private static Account findAccount(String ano) {
-//			
-//			
-//			for (int i = 0; i < accountArray.length; i++) {
-//				
-//				Account find = accountArray[i];
-//				ano = scanner.next();
-//				String findAno = find.getAno();
-//				if (findAno == ano) {
-//					int balance = find.getBalance();
-//					break;
-//				}
-//			}
-//			
-//			
-//			
-//		}
+		private static Account findAccount(String ano) {
+			
+			
+			for (int i = 0; i < accountArray.length; i++) {
+				
+				Account find = accountArray[i];
+				ano = scanner.next();
+				String findAno = find.getAno();
+				if (findAno == ano) {
+					int balance = find.getBalance();
+					break;
+				}
+			}
+			
+			
+			
+		}
 		
 		
 		

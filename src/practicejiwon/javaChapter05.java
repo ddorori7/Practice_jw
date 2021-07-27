@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class javaChapter05 {
 
 	public static void main(String[] args) {
-//		ex7();
+		ex7();
 //		ex8();
-		ex9();
+//		ex9();
 
 	}
 	
