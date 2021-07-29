@@ -118,8 +118,8 @@ public class BankApplication02 {
 				account.setBalance(balance);
 				System.out.println("결과: 예금이 성공되었습니다.");
 			} catch (Exception e) {
-				e.printStackTrace();
-//				System.err.println("계좌번호를 확인해주세요");
+//				e.printStackTrace();
+				System.err.println("계좌번호를 확인해주세요");
 			} 
 			
 
@@ -138,12 +138,12 @@ public class BankApplication02 {
 			
 			try {
 				Account account = findAccount(ano);
-				int balance = account.getBalance() + money;
+				int balance = account.getBalance() - money;
 				account.setBalance(balance);
-				System.out.println("결과: 예금이 성공되었습니다.");
+				System.out.println("결과: 출금이 성공되었습니다.");
 			} catch (Exception e) {
-				e.printStackTrace();
-//				System.err.println("계좌번호를 확인해주세요");
+//				e.printStackTrace();
+				System.err.println("계좌번호를 확인해주세요");
 			} 
 			
 //			findAccount(ano).setBalance(findAccount(ano).getBalance() - money);
@@ -158,8 +158,8 @@ public class BankApplication02 {
 			Account find = null;
 			for (int i = 0; i < accountArray.length; i++) {
 				find = accountArray[i];
-				if (find.getAno() == ano){
-					System.out.println("dkdk"); // 테스트
+				if (find != null && ano.equals(find.getAno())){
+//					System.out.println("dkdk"); // 테스트
 					return find;
 				}
 				
