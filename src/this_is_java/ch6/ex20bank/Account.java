@@ -8,9 +8,10 @@ public class Account {
 	
 	
 	public Account(String ano, String owner, int balance) {
-		this.setAno(ano);
-		this.setBalance(balance);
-		this.setOwner(owner);
+		this.ano = ano;
+		this.balance = balance;
+		this.owner = owner;
+		
 	}
 
 

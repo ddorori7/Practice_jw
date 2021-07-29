@@ -10,6 +10,7 @@ public class ActionEx {
 				System.out.println("복사를 합니다.");
 			}
 		};
+		
 		action.work();
 		
 	}

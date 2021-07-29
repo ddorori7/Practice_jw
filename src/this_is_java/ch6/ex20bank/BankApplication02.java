@@ -98,23 +98,31 @@ public class BankApplication02 {
 			System.out.println("예금");	
 			System.out.println("-------------");
 			System.out.print("계좌번호: ");
-			String inputAno = scanner.next();
-//			findAccount(scanner.next()); 
+			String ano = scanner.next();
 			System.out.print("예금액: ");
 			int money = scanner.nextInt();
 			
-			for (int i = 0; i < accountArray.length; i++) {
-				Account accountFind = accountArray[i];
-				String ano = accountFind.getAno();
-				if (inputAno.equals(ano)) {
-					int balance = accountFind.getBalance();
-					balance += money;
-					accountFind.setBalance(balance);
-					System.out.println("예금이 성공되었습니다.");
-//					System.out.println(balance); // 테스트
-					break;
-				}
-			}
+//			findAccount(ano).setBalance(findAccount(ano).getBalance() + money);
+			
+//			Account account = findAccount(ano);
+//			if (account != null) {
+//				int balance = account.getBalance() + money;
+//				account.setBalance(balance);
+//				System.out.println("결과: 예금이 성공되었습니다.");
+//			} else {
+//				System.out.println("결과: 계좌번호를 확인해주세요.");
+//			}
+			try {
+				Account account = findAccount(ano);
+				int balance = account.getBalance() + money;
+				account.setBalance(balance);
+				System.out.println("결과: 예금이 성공되었습니다.");
+			} catch (Exception e) {
+				e.printStackTrace();
+//				System.err.println("계좌번호를 확인해주세요");
+			} 
+			
+
 		}
 		
 		// 출금하기
@@ -124,49 +132,46 @@ public class BankApplication02 {
 			System.out.println("출금");	
 			System.out.println("-------------");
 			System.out.print("계좌번호: ");
-			String inputAno = scanner.next();
-//			findAccount(scanner.next()); // 변경점1
+			String ano = scanner.next();	
 			System.out.print("출금액: ");
 			int money = scanner.nextInt();
 			
-			for (int i = 0; i < accountArray.length; i++) {
-				Account accountFind = accountArray[i];
-				String ano = accountFind.getAno();
-				if (inputAno.equals(ano)) {
-					int balance = accountFind.getBalance();
-					balance -= money;
-					accountFind.setBalance(balance);
-					System.out.println("출금이 성공되었습니다.");
-//					System.out.println(balance); // 테스트
-					break;
-				}
-			}
+			try {
+				Account account = findAccount(ano);
+				int balance = account.getBalance() + money;
+				account.setBalance(balance);
+				System.out.println("결과: 예금이 성공되었습니다.");
+			} catch (Exception e) {
+				e.printStackTrace();
+//				System.err.println("계좌번호를 확인해주세요");
+			} 
+			
+//			findAccount(ano).setBalance(findAccount(ano).getBalance() - money);
+//			System.out.println("결과: 출금이 성공되었습니다.");
 			
 		}
 		
 		// TODO: 객체찾기 메서드 만들기!!!
 		// Account 배열에서 ano와 동일한 Account 객체 찾기
-		private static Account findAccount(String ano) {
-			
-			
+		
+		private static Account findAccount(String ano) throws Exception {
+			Account find = null;
 			for (int i = 0; i < accountArray.length; i++) {
-				
-				Account find = accountArray[i];
-				ano = scanner.next();
-				String findAno = find.getAno();
-				if (findAno == ano) {
-					int balance = find.getBalance();
-					break;
+				find = accountArray[i];
+				if (find.getAno() == ano){
+					System.out.println("dkdk"); // 테스트
+					return find;
 				}
+				
+//				if (ano == accountArray[i].getAno()) {
+//					System.out.println("dkdk"); // 테스트
+//					return accountArray[i];
+//				}
+				
 			}
-			
-			
+			throw new Exception("찾을 수 없음");
 			
 		}
-		
-		
-		
-		
 		
 		
 		
