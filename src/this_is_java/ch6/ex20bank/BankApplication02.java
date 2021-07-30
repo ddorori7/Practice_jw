@@ -151,7 +151,7 @@ public class BankApplication02 {
 			
 		}
 		
-		// TODO: 객체찾기 메서드 만들기!!!
+		
 		// Account 배열에서 ano와 동일한 Account 객체 찾기
 		
 		private static Account findAccount(String ano) throws Exception {
@@ -169,7 +169,7 @@ public class BankApplication02 {
 //				}
 				
 			}
-			throw new Exception("찾을 수 없음");
+			throw new Exception("계좌를 찾을 수 없음");
 			
 		}
 		
