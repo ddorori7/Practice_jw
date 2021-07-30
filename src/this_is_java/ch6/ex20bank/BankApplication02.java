@@ -154,12 +154,11 @@ public class BankApplication02 {
 		
 		// Account 배열에서 ano와 동일한 Account 객체 찾기
 		
-		private static Account findAccount(String ano) throws Exception {
+		private static Account findAccount(String ano) {
 			Account find = null;
 			for (int i = 0; i < accountArray.length; i++) {
 				find = accountArray[i];
 				if (find != null && ano.equals(find.getAno())){
-//					System.out.println("dkdk"); // 테스트
 					return find;
 				}
 				
@@ -169,7 +168,7 @@ public class BankApplication02 {
 //				}
 				
 			}
-			throw new Exception("계좌를 찾을 수 없음");
+		return null;
 			
 		}
 		
