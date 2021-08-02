@@ -158,15 +158,12 @@ public class BankApplication02 {
 			Account find = null;
 			for (int i = 0; i < accountArray.length; i++) {
 				find = accountArray[i];
+				
 				if (find != null && ano.equals(find.getAno())){
-//					System.out.println("dkdk"); // 테스트
 					return find;
 				}
 				
-//				if (ano == accountArray[i].getAno()) {
-//					System.out.println("dkdk"); // 테스트
-//					return accountArray[i];
-//				}
+//				if (ano == find.getAno()) {return find;}
 				
 			}
 			throw new Exception("계좌를 찾을 수 없음");
