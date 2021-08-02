@@ -2,7 +2,7 @@ package baecjoon;
 
 import java.util.Scanner;
 
-public class Main { // 입출력과 사칙연산
+public class Main01 { // 입출력과 사칙연산
 
 	public static void main(String[] args) {
 //		ex1000();
